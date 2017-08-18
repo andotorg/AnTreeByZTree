@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/iconfont/iconfont.css">
+    <link href="css/metroStyle/metroStyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div>
+        <ul id="tree" class="ztree"></ul>
+    </div>
+    <i class="icon iconfont ad-folder1"></i>
+
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.all-ad.js"></script>
+
+    <script type="text/javascript">
+        var zTreeObj;
+        // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+        var setting = {
+            check:{
+                enable:true,
+                chkStyle:"checkbox"
+            },
+            view: {
+                showIcon: true,
+                nameIsHTML: true
+            },
+        };
+        // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+        var zNodes = [
+            {
+                id:"0",
+                name:"系统菜单",
+                /*iconOpen:"icon iconfont ad-folder-open",
+                iconClose:"icon iconfont ad-folder-close",
+                antType:"class",*/
+                iconOpen:"<i class='icon iconfont ad-folder-open' style='color:#3498DB'></i>",
+                iconClose:"<i class='icon iconfont ad-folder-close' style='color:#3498DB'></i>",
+                antType:"html",
+                open:true,
+                children:[
+                    {
+                        id:"1",
+                        name:"系统设置",
+                        iconOpen:"<i class='icon iconfont ad-folder-open' style='color:#3498DB'></i>",
+                        iconClose:"<i class='icon iconfont ad-folder-close' style='color:#3498DB'></i>",
+                        antType:"html",
+                        children:[
+                            {
+                                name:"菜单管理",
+                                icon:"<i class='icon iconfont ad-file' style='color:#3498DB'></i>",
+                                antType:"html"
+                            },
+                            {
+                                name:"菜单操作项",
+                                icon:"<i class='icon iconfont ad-file' style='color:#3498DB'></i>",
+                                antType:"html"
+                            }
+                        ]
+                    },
+                    {
+                        id:"2",
+                        name:"组织管理",
+                        iconOpen:"<i class='icon iconfont ad-folder-open' style='color:#3498DB'></i>",
+                        iconClose:"<i class='icon iconfont ad-folder-close' style='color:#3498DB'></i>",
+                        antType:"html",
+                        children:[
+                            {
+                                name:"组织管理",
+                                icon:"<i class='icon iconfont ad-file' style='color:#3498DB'></i>",
+                                antType:"html"
+                            },
+                            {
+                                name:"用户管理",
+                                icon:"<i class='icon iconfont ad-file' style='color:#3498DB'></i>",
+                                antType:"html"
+                            },
+                            {
+                                name:"岗位管理",
+                                icon:"<i class='icon iconfont ad-file' style='color:#3498DB'></i>",
+                                antType:"html"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+        $(document).ready(function(){
+            zTreeObj = $.fn.zTree.init($("#tree"), setting, zNodes);
+
+
+        });
+    </script>
+</body>
+</html>
